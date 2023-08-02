@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-bottom: 1px solid #94a3b8;
 }
-
-.App-link {
-  color: #61dafb;
+.AddContactForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  border-bottom: 1px solid #94a3b8;
 }
+.AddContactForm div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.AddContactForm input {
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #94a3b8;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.AddContactForm label {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.AddContactForm button {
+  font-size: 25px;
+  border-radius: 5px;
+  color: #fff;
+  background: #0ea5e9;
+  border: none;
+  margin-bottom: 20px;
+}
+.ContactsListForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.ContactsListForm section{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  border-bottom: 1px solid #94a3b8;
+}
+.ContactsListForm div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.ContactDiv {
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center;
+  align-items: center;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.DeleteIcon{
+  color: #e11d48;
+  cursor: pointer;
 }
