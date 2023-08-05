@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-const ContactsList = ({Name,Email,onClick}) => {
+
+const ContactsList = ({ Name, Email, onDelete }) => {
   return (
     <form action="" className="ContactsListForm">
       <section>
@@ -9,7 +10,11 @@ const ContactsList = ({Name,Email,onClick}) => {
           <p>{Email}</p>
         </div>
         <div>
-          <FontAwesomeIcon icon={faTrash} className="DeleteIcon" onClick={onClick} />
+          <FontAwesomeIcon
+            icon={faTrash}
+            className="DeleteIcon"
+            onClick={onDelete}
+          />
         </div>
       </section>
     </form>

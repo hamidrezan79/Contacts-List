@@ -1,19 +1,9 @@
 {
   "Users": [
     {
-      "id": 1,
-      "Name": "json-server1",
-      "Email": "typicode"
-    },
-    {
-      "id": 2,
-      "Name": "json-server2",
-      "Email": "typicode"
-    },
-    {
-      "id": 3,
-      "Name": "json-server3",
-      "Email": "typicode"
+      "Name": "حمیدرضا2",
+      "Email": "hamidrezanaderian8@gmail.comdfef",
+      "id": 90
     }
   ]
 }

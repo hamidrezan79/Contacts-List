@@ -7,41 +7,51 @@ import axios from "axios";
 import ContactsList from "./Components/ContactsList";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [users, setUsers] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
   const [error, setError] = useState(false);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     axios
       .get("http://localhost:3001/Users")
-      .then((res) => setUser(res.data))
-      .catch((error) => setError(true));
+      .then((res) => {
+        setUsers(res.data);
+      })
+      .catch((error) => {
+        setError(true);
+      });
   }, []);
+  const deleteHandler = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3001/Users/${id}`);
+      const { data } = await axios.get("http://localhost:3001/Users");
+      setUsers(data);
+      setUser(null);
+      setSelectedId(null);
+    } catch (error) {}
+  };
   const renderUsers = () => {
-    let renderUsersDetail = <p>"Loading"</p>;
-    if (error) renderUsersDetail = <p>"Fetching Data Failed"</p>;
-    if (user && !error) {
-      renderUsersDetail = user.map((u) => (
+    let renderUsersDetail = <p>Loading</p>;
+    if (error) renderUsersDetail = <p>Fetching Data Failed</p>;
+    if (users && !error) {
+      renderUsersDetail = users.map((u) => (
         <ContactsList
           key={u.id}
           Name={u.Name}
           Email={u.Email}
-          onClick={() => selectHandler(u.id)}
+          onDelete={() => deleteHandler(u.id)}
         />
       ));
     }
     return renderUsersDetail;
   };
 
-  const selectHandler = (id) => {
-    setSelectedId(id);
-    console.log(selectedId);
-  };
   return (
     <div className="App">
       <BrowserRouter>
         <Layout>
-          <AddContactForm />
+          <AddContactForm setUsers={setUsers} />
           <section>{renderUsers()}</section>
         </Layout>
       </BrowserRouter>

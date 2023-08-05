@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .header {
   display: flex;
   align-items: center;
@@ -39,6 +44,7 @@
   background: #0ea5e9;
   border: none;
   margin-bottom: 20px;
+  padding: 5px;
 }
 .ContactsListForm {
   display: flex;
@@ -48,7 +54,7 @@
   border-radius: 5px;
   margin-top: 10px;
 }
-.ContactsListForm section{
+.ContactsListForm section {
   width: 50%;
   display: flex;
   flex-direction: row;
@@ -63,15 +69,15 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-bottom: 10px;
 }
 .ContactDiv {
   display: flex;
   flex-direction: column !important;
   justify-content: center;
   align-items: center;
-
 }
-.DeleteIcon{
+.DeleteIcon {
   color: #e11d48;
   cursor: pointer;
 }
